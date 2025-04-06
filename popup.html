@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Harmful Content Detector</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+  <div class="popup-container">
+    <header>
+      <h1>Harm Detector</h1>
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Active</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="analysis-tabs">
+        <button class="tab-btn active" data-tab="text" type="button">
+          <span class="tab-icon">📝</span>
+          <span>Text</span>
+        </button>
+        <button class="tab-btn" data-tab="image" type="button">
+          <span class="tab-icon">🖼️</span>
+          <span>Image</span>
+        </button>
+        <button class="tab-btn" data-tab="audio" type="button">
+          <span class="tab-icon">🎵</span>
+          <span>Audio</span>
+        </button>
+        <button class="tab-btn" data-tab="video" type="button">
+          <span class="tab-icon">🎬</span>
+          <span>Video</span>
+        </button>
+      </section>
+
+      <section class="stats-container">
+        <div class="stat-item">
+          <span class="stat-value" id="toxicity-score">-</span>
+          <span class="stat-label">Harm Score</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="harmful-count">0</span>
+          <span class="stat-label">Issues Found</span>
+        </div>
+      </section>
+
+      <section class="content-analysis">
+        <div class="analysis-panel active" id="text-panel">
+          <div class="analysis-header">
+            <h2>Text Analysis</h2>
+            <span class="status-badge">Analyzing...</span>
+          </div>
+          <div class="content-list" id="text-content-list">
+            <div class="loading">Analyzing page content...</div>
+          </div>
+        </div>
+
+        <div class="analysis-panel" id="image-panel">
+          <div class="analysis-header">
+            <h2>Image Analysis</h2>
+            <span class="status-badge">No images found</span>
+          </div>
+          <div class="content-list" id="image-content-list"></div>
+        </div>
+
+        <div class="analysis-panel" id="audio-panel">
+          <div class="analysis-header">
+            <h2>Audio Analysis</h2>
+            <span class="status-badge">No audio found</span>
+          </div>
+          <div class="content-list" id="audio-content-list"></div>
+        </div>
+
+        <div class="analysis-panel" id="video-panel">
+          <div class="analysis-header">
+            <h2>Video Analysis</h2>
+            <span class="status-badge">No videos found</span>
+          </div>
+          <div class="content-list" id="video-content-list"></div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="report-btn" class="btn btn-warning" type="button">Report</button>
+        <button id="download-btn" class="btn btn-primary" type="button">Download</button>
+        <button id="view-dashboard" class="btn btn-info" type="button">Dashboard</button>
+      </section>
+    </main>
+
+    <footer>
+      <span class="user-name" id="user-name">Not logged in</span>
+      <button id="login-btn" class="text-button" type="button">Login</button>
+    </footer>
+  </div>
+
+  <!-- Safety Notification -->
+  <div class="safety-notification" id="safety-notification">
+    <div class="safety-content">
+      <span class="safety-icon">✅</span>
+      <div class="safety-message">
+        <h3>Website is Safe</h3>
+        <p>No harmful content detected on this page</p>
+      </div>
+    </div>
+    <button class="close-notification" id="close-notification" type="button">×</button>
+  </div>
+
+  <!-- Error Notification -->
+  <div class="error-notification" id="error-notification">
+    <div class="error-content">
+      <span class="error-icon">⚠️</span>
+      <div class="error-message">
+        <h3>Error</h3>
+        <p id="error-message-text">An error occurred</p>
+      </div>
+    </div>
+    <button class="close-notification" id="close-error" type="button">×</button>
+  </div>
+
+  <!-- Load scripts in correct order -->
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
