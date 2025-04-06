@@ -2,8 +2,6 @@
 
 A powerful Chrome extension that helps users identify and protect against harmful content across the web. The extension uses advanced content analysis to detect potentially harmful text, images, audio, and video content in real-time.
 
-![Extension Screenshot](screenshots/extension-screenshot.png)
-
 ## Features
 
 - 🔍 **Real-time Content Analysis**: Automatically analyzes web page content as you browse
@@ -164,7 +162,3 @@ For support, please:
 - [ ] Community-driven content moderation
 - [ ] API for third-party integrations
 - [ ] Mobile app version
-
----
-
-Made with ❤️ by [Your Name/Organization] 
